@@ -34,6 +34,11 @@ const routerHandler = (app) => {
     app.use("/post", postController);
     app.use("/comment", commentController);
     app.use("/react", reactController);
+    app.get("/", (req, res) => {
+        res.status(200).json({
+            message: "Welcome to Social App"
+        })
+    })
     /* all static files */
     app.use("/Assets", express.static("Assets"));
     /* global error handler */
